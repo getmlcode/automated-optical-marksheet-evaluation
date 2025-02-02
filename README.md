@@ -10,7 +10,7 @@ their location is detected based on splitting image into grid based on number of
 ![](3_2staged_out.jpg)  
 ![](1_2staged_out.jpg)
 
-#### *Note on methods tried*
+## *Note on methods tried*
 Methods tried so far and several others researched on internet are mainly based on thresholding for answer bubble detection  
 and their `location finding is based on some heuristic which only seem to work for particular types OMR sheet`
 
