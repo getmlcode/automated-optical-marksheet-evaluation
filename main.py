@@ -3,12 +3,13 @@ import cv2
 
 
 if __name__ == "__main__":
-    im = cv2.imread("3.jpg")
+    img_path = "3.jpg"
+    im = cv2.imread(img_path)
     im = cv2.resize(im, (700, 700))
     cv2.imshow("input omr", im)
 
-    score = omrt.get_score("3.jpg", 5, 5, [1, 2, 0, 1, 4])
-    img_final = omrt.get_graded_omr("3.jpg", 700, 700, 5, 5, [1, 2, 0, 1, 4])
+    score = omrt.get_score(img_path, 5, 5, [1, 2, 0, 1, 4])
+    img_final = omrt.get_graded_omr(img_path, 700, 700, 5, 5, [1, 2, 0, 1, 4])
     cv2.putText(
         img_final,
         str(score) + "%",
