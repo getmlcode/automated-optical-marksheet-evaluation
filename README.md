@@ -124,3 +124,18 @@ OMR_DETECTOR_MODE=ssd \
 OMR_SSD_MODEL=models/ssd_bubble.onnx \
 python main.py
 ```
+
+
+### Verified AI entrypoints in code
+- `YOLOBubbleDetector` uses `ultralytics.YOLO(...)` for inference in `ai_based_omr.py`.
+- `scripts/run_e2e.py` is an end-to-end CLI runner for testing a full sheet.
+
+Example E2E command:
+```bash
+python scripts/run_e2e.py   --image 3.jpg   --answer-key 1,2,0,1,4   --num-choices 5   --mode warped_grid
+```
+
+Model-backed YOLO command (requires your bubble detector weights):
+```bash
+python scripts/run_e2e.py   --image 3.jpg   --answer-key 1,2,0,1,4   --num-choices 5   --mode yolo   --yolo-model models/bubble_detector.pt   --bubble-class bubble
+```
